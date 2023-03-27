@@ -1,8 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge
 
-import pt.ulusofona.cm.kotlin.challenge.models.Pessoa
-import src.pt.ulusofona.cm.kotlin.challenge.models.*
-import src.pt.ulusofona.cm.kotlin.challenge.interfaces.*
+import pt.ulusofona.cm.kotlin.challenge.models.*
+
 
 import java.time.LocalDate
 
@@ -22,7 +21,7 @@ fun main(args: Array<String>) {
     println(pessoa1.moverVeiculoPara("FIAT",2,5))
     println(pessoa1.venderVeiculo("BMW",Pessoa("NUNO", mutableListOf(),dataDeNascimento, null, posicao)))
     println(pessoa1.veiculos.toString())
-    println(pessoa1.comprarVeiculo(Carro("FERRARI",Motor(22,22))))
+    println(pessoa1.comprarVeiculo(Carro("FERRARI", Motor(22,22))))
 
 
 }
