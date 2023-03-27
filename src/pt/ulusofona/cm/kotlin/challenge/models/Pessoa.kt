@@ -9,7 +9,7 @@ import src.pt.ulusofona.cm.kotlin.challenge.models.Posicao
 import src.pt.ulusofona.cm.kotlin.challenge.models.Veiculo
 
 
-abstract class Pessoa(val nome: String,var veiculos: MutableList<Veiculo>,  val dataDeNascimento: LocalDate, var carta: Carta? = null, var posicao: Posicao) {
+class Pessoa(val nome: String,var veiculos: MutableList<Veiculo>,  val dataDeNascimento: LocalDate, var carta: Carta? = null, var posicao: Posicao) {
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
     }
@@ -19,7 +19,9 @@ abstract class Pessoa(val nome: String,var veiculos: MutableList<Veiculo>,  val 
                 return veiculo
             }
         }
+
         throw VeiculoNaoEncontradoException("Veículo com identificador $identificador não encontrado")
+
     }
     fun venderVeiculo(identificador: String, comprador: Pessoa) {
         // Encontra o veículo pelo identificador
@@ -49,7 +51,7 @@ abstract class Pessoa(val nome: String,var veiculos: MutableList<Veiculo>,  val 
         veiculo.posicao?.alterarPosicaoPara(x,y)
 
     }
-    fun tirarCarta(categoria: String) {
+    fun tirarCarta() {
         if (carta != null) {
             throw RuntimeException("A pessoa já possui uma carta.")
         }
@@ -59,7 +61,7 @@ abstract class Pessoa(val nome: String,var veiculos: MutableList<Veiculo>,  val 
         carta = Carta()
     }
 
-    fun temCarta(categoria: String): Boolean {
+    fun temCarta(): Boolean {
         return carta != null
     }
 
