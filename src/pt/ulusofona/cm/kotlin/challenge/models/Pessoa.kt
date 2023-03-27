@@ -2,6 +2,7 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.*
 import java.time.LocalDate
 import pt.ulusofona.cm.kotlin.challenge.interfaces.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -61,6 +62,8 @@ class Pessoa(val nome: String, val dataDeNascimento: Date) {
 
 
     override fun toString(): String {
-        return "Pessoa | ${nome} | ${dataDeNascimento} | " + posicao.toString()
+        val formatoData = SimpleDateFormat("dd-MM-yyyy")
+        val dataFormatada = formatoData.format(dataDeNascimento)
+        return "Pessoa | ${nome} | ${dataFormatada} | " + posicao.toString()
     }
 }
