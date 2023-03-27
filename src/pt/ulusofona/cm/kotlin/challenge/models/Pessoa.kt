@@ -2,8 +2,10 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.*
 import java.time.LocalDate
 
+import java.util.*
 
-class Pessoa(val nome: String, val dataDeNascimento: LocalDate) {
+
+class Pessoa(val nome: String, val dataDeNascimento: Date) {
     var veiculos: MutableList<Veiculo> = mutableListOf()
     var carta: Carta? = null
     var posicao = Posicao(0,0)

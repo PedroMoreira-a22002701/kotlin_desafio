@@ -4,6 +4,7 @@ import pt.ulusofona.cm.kotlin.challenge.models.*
 
 
 import java.time.LocalDate
+import java.util.*
 
 fun main(args: Array<String>) {
     val veiculos: MutableList<Veiculo> = mutableListOf()
@@ -11,7 +12,7 @@ fun main(args: Array<String>) {
     val veiculo2 = Bicicleta("FIAT")
     veiculos.add(veiculo1)
     veiculos.add(veiculo2)
-    val dataDeNascimento = LocalDate.parse("2001-06-15")
+    val dataDeNascimento = Date("2001-06-15")
     val posicao = Posicao(0,0)
     val pessoa1 = Pessoa("Pedro",dataDeNascimento)
     println(pessoa1.temCarta())
