@@ -1,12 +1,8 @@
 package pt.ulusofona.cm.kotlin.challenge.models
-
-import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
-import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
-import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.*
 import java.time.LocalDate
-import src.pt.ulusofona.cm.kotlin.challenge.models.Carta
-import src.pt.ulusofona.cm.kotlin.challenge.models.Posicao
-import src.pt.ulusofona.cm.kotlin.challenge.models.Veiculo
+import src.pt.ulusofona.cm.kotlin.challenge.models.*
+import src.pt.ulusofona.cm.kotlin.challenge.interfaces.*
 
 
 class Pessoa(val nome: String,var veiculos: MutableList<Veiculo>,  val dataDeNascimento: LocalDate, var carta: Carta? = null, var posicao: Posicao) {

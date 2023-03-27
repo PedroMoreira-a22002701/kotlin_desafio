@@ -1,6 +1,8 @@
 package src.pt.ulusofona.cm.kotlin.challenge.models;
-
-import src.pt.ulusofona.cm.kotlin.challenge.models.Posicao
+import pt.ulusofona.cm.kotlin.challenge.exceptions.*
+import java.time.LocalDate
+import src.pt.ulusofona.cm.kotlin.challenge.models.*
+import src.pt.ulusofona.cm.kotlin.challenge.interfaces.*
 import java.util.Date
 
 abstract class Veiculo(open val identificador: String) {

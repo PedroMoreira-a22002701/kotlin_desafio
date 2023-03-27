@@ -1,5 +1,8 @@
 package pt.ulusofona.cm.kotlin.challenge.exceptions
-
+import pt.ulusofona.cm.kotlin.challenge.exceptions.*
+import java.time.LocalDate
+import src.pt.ulusofona.cm.kotlin.challenge.models.*
+import src.pt.ulusofona.cm.kotlin.challenge.interfaces.*
 class AlterarPosicaoException(message: String) : Exception(message)
 
 class MenorDeIdadeException(message: String) : Exception(message)

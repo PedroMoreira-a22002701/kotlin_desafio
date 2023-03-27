@@ -2,6 +2,8 @@ package pt.ulusofona.cm.kotlin.challenge
 
 import pt.ulusofona.cm.kotlin.challenge.models.Pessoa
 import src.pt.ulusofona.cm.kotlin.challenge.models.*
+import src.pt.ulusofona.cm.kotlin.challenge.interfaces.*
+
 import java.time.LocalDate
 
 fun main(args: Array<String>) {
