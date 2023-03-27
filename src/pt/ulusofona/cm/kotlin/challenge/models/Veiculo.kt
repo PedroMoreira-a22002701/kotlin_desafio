@@ -4,7 +4,7 @@ import java.util.Date
 
 abstract class Veiculo(open val identificador: String) {
     var posicao: Posicao = Posicao(0,0)
-    var dataDeAquisicao: Date? = Date()
+    var dataDeAquisicao: Date = Date()
 
     abstract fun requerCarta(): Boolean
 }
