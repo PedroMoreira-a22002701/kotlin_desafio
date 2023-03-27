@@ -1,14 +1,13 @@
 package pt.ulusofona.cm.kotlin.challenge
 
 import pt.ulusofona.cm.kotlin.challenge.models.Pessoa
-import src.pt.ulusofona.cm.kotlin.challenge.models.Posicao
-import src.pt.ulusofona.cm.kotlin.challenge.models.Veiculo
+import src.pt.ulusofona.cm.kotlin.challenge.models.*
 import java.time.LocalDate
 
 fun main(args: Array<String>) {
     val veiculos: MutableList<Veiculo> = mutableListOf()
-    val veiculo1 = Veiculo("BMW")
-    val veiculo2 = Veiculo("FIAT")
+    val veiculo1 = Carro("BMW", Motor(3,3))
+    val veiculo2 = Bicicleta("FIAT")
     veiculos.add(veiculo1)
     veiculos.add(veiculo2)
     val dataDeNascimento = LocalDate.parse("2001-06-15")
@@ -21,7 +20,7 @@ fun main(args: Array<String>) {
     println(pessoa1.moverVeiculoPara("FIAT",2,5))
     println(pessoa1.venderVeiculo("BMW",Pessoa("NUNO", mutableListOf(),dataDeNascimento, null, posicao)))
     println(pessoa1.veiculos.toString())
-    println(pessoa1.comprarVeiculo(Veiculo("FERRARI")))
+    println(pessoa1.comprarVeiculo(Carro("FERRARI",Motor(22,22))))
 
 
 }
