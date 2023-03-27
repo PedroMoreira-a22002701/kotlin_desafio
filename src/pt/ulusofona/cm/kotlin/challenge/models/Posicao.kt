@@ -1,5 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge.models
-
+import pt.ulusofona.cm.kotlin.challenge.interfaces.*
 
 class Posicao(var x: Int, var y: Int) {
 

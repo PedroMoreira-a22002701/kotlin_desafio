@@ -1,7 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.*
 import java.time.LocalDate
-
+import pt.ulusofona.cm.kotlin.challenge.interfaces.*
 import java.util.*
 
 
