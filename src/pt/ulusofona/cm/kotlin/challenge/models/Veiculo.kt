@@ -7,4 +7,5 @@ abstract class Veiculo(open val identificador: String) {
     var dataDeAquisicao: Date = Date()
 
     abstract fun requerCarta(): Boolean
+
 }
