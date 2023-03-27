@@ -6,31 +6,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-abstract class Pessoa(val nome: String, val dataDeNascimento: Date): Ligavel, Movimentavel {
+class Pessoa(val nome: String, val dataDeNascimento: Date) {
     var veiculos: MutableList<Veiculo> = mutableListOf()
     var carta: Carta? = null
     var posicao = Posicao(0,0)
 
-    override fun ligar() {
-        if (!temCarta()) {
-            throw PessoaSemCartaException("Sem Carta")
-        }
-    }
 
-    abstract override fun estaLigado(): Boolean
-
-
-
-     override fun desligar() {
-         if (!temCarta()) {
-             throw PessoaSemCartaException("Sem Carta")
-         }
-     }
-    override fun moverPara(x: Int, y: Int) {
-        if (posicao.x == x && posicao.y == y) {
-            throw AlterarPosicaoException("Encontra-se na mesma posição")
-        }
-    }
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
     }
