@@ -22,6 +22,7 @@ class Carro(override val identificador: String, val motor: Motor) : Veiculo(iden
             motor.ligar()
 
         }
+
         throw VeiculoLigadoException("Veiculo esta Ligado")
     }
 

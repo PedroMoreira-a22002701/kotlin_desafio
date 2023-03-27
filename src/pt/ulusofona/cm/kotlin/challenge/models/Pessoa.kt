@@ -6,10 +6,22 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class Pessoa(val nome: String, val dataDeNascimento: Date) {
+class Pessoa(val nome: String, val dataDeNascimento: Date): Ligavel, Movimentavel {
     var veiculos: MutableList<Veiculo> = mutableListOf()
     var carta: Carta? = null
     var posicao = Posicao(0,0)
+
+    override fun ligar() {
+        if (!temCarta()) {
+            throw PessoaSemCartaException("Sem Carta")
+        }
+    }
+
+    override fun moverPara(x: Int, y: Int) {
+        if (posicao.x == x && posicao.y == y) {
+            throw AlterarPosicaoException("Encontra-se na mesma posição")
+        }
+    }
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
     }
@@ -42,7 +54,7 @@ class Pessoa(val nome: String, val dataDeNascimento: Date) {
     }
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
         val veiculo = pesquisarVeiculo(identificador)
-        veiculo.posicao?.alterarPosicaoPara(x,y)
+        veiculo.moverPara(x,y)
 
     }
     fun tirarCarta() {
