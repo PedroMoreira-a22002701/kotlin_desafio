@@ -3,7 +3,10 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.*
 import java.time.LocalDate
 
 
-class Pessoa(val nome: String, var veiculos: MutableList<Veiculo>, val dataDeNascimento: LocalDate, var carta: Carta? = null, var posicao: Posicao) {
+class Pessoa(val nome: String, val dataDeNascimento: LocalDate) {
+    var veiculos: MutableList<Veiculo> = mutableListOf()
+    var carta: Carta? = null
+    var posicao = Posicao(0,0)
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
     }
