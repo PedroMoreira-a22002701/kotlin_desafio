@@ -12,7 +12,7 @@ class Pessoa(val nome: String, val dataDeNascimento: Date) {
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
     }
-    fun pesquisarVeiculo(identificador: String): Veiculo? {
+    fun pesquisarVeiculo(identificador: String): Veiculo {
         for (veiculo in veiculos) {
             if (veiculo.identificador == identificador) {
                 return veiculo
@@ -25,9 +25,6 @@ class Pessoa(val nome: String, val dataDeNascimento: Date) {
     fun venderVeiculo(identificador: String, comprador: Pessoa) {
         // Encontra o veículo pelo identificador
         val veiculo = pesquisarVeiculo(identificador)
-        if (veiculo == null) {
-            throw IllegalStateException("O vendedor não possui este veiculo.")
-        }
         // Remove o veículo da lista de veículos da pessoa que o possui
         veiculos.remove(veiculo)
 
@@ -44,9 +41,6 @@ class Pessoa(val nome: String, val dataDeNascimento: Date) {
     }
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
         val veiculo = pesquisarVeiculo(identificador)
-        if (veiculo == null) {
-            throw IllegalStateException("O vendedor não possui este veiculo.")
-        }
         veiculo.posicao?.alterarPosicaoPara(x,y)
 
     }
