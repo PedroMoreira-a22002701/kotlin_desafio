@@ -4,4 +4,8 @@ class Bicicleta(override var identificador: String) : Veiculo(identificador){
     override fun toString(): String {
         return "Bicicleta | ${identificador} | ${dataDeAquisicao} | "+ posicao.toString()
     }
+
+    override fun requerCarta(): Boolean {
+        return false
+    }
 }

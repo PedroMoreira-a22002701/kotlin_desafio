@@ -6,4 +6,8 @@ class Carro(override val identificador: String, val motor: Motor) : Veiculo(iden
     override fun toString(): String {
         return "Bicicleta | ${identificador} | ${dataDeAquisicao} | "+ posicao.toString()
     }
+
+    override fun requerCarta(): Boolean {
+        return true
+    }
 }
