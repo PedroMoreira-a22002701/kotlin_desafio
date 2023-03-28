@@ -39,6 +39,12 @@ class Carro(override val identificador: String, val motor: Motor) : Veiculo(iden
 
 
     override fun moverPara(x: Int, y: Int) {
-        this.posicao.alterarPosicaoPara(x,y)
+        if (estaLigado()) {
+            if()
+            this.posicao.alterarPosicaoPara(x, y)
+        } else {
+            throw VeiculoDesligadoException("Não é possível mover um veículo desligado.")
+
+        }
     }
 }
