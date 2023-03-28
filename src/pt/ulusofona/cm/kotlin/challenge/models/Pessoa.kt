@@ -44,11 +44,7 @@ class Pessoa(val nome: String, val dataDeNascimento: Date) {
     }
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
         val veiculo = pesquisarVeiculo(identificador)
-        if (this.temCarta()) {
-            veiculo.moverPara(x, y)
-        }else {
-            throw PessoaSemCartaException("Pessoa sem carta")
-        }
+        veiculo.moverPara(x,y)
 
     }
     fun tirarCarta() {
