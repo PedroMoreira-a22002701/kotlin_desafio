@@ -1,5 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
+import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoDesligadoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
@@ -40,8 +41,12 @@ class Carro(override val identificador: String, val motor: Motor) : Veiculo(iden
 
     override fun moverPara(x: Int, y: Int) {
         if (estaLigado()) {
+            if(x == posicao.x && y==posicao.y){
+                throw AlterarPosicaoException("Veiculo encontra-se na mesma posição")
+            } else {
+                this.posicao.alterarPosicaoPara(x, y)
+            }
 
-            this.posicao.alterarPosicaoPara(x, y)
         } else {
             throw VeiculoDesligadoException("Não é possível mover um veículo desligado.")
 
