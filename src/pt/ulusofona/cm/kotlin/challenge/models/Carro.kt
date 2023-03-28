@@ -20,17 +20,17 @@ class Carro(override val identificador: String, val motor: Motor) : Veiculo(iden
     override fun ligar() {
         if (!motor.ligado) {
             motor.ligar()
-
+        } else {
+            throw VeiculoLigadoException("Veiculo esta Ligado")
         }
-
-        throw VeiculoLigadoException("Veiculo esta Ligado")
     }
 
     override fun desligar() {
         if (motor.ligado) {
             motor.desligar()
+        } else {
+            throw VeiculoDesligadoException("Veiculo esta Desligado")
         }
-        throw VeiculoDesligadoException("Veiculo esta Desligado")
     }
 
     override fun estaLigado(): Boolean {
